@@ -3,7 +3,7 @@ library("dplyr")
 library("plotly")
 library("ggplot2")
 
-# New CSV vile 
+# New CSV file 
 Art_by_country_subset = HIV_df[,c(1,2,3,4,11)]
 write.csv(Art_by_country_subset, "data/Art_by_country_subset.csv",
           row.names = FALSE)
