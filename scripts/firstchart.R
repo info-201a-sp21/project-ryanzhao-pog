@@ -22,6 +22,11 @@ geographical_chart <- function(df1, df2) {
     filtered_hiv$Country,
     filtered_hiv$art_received
   )
+  # Color
+  pal <- colorNumeric(
+    palette = "RdYlBu",
+    domain = filtered_hiv$art_received
+  )
   # Interactive Geographical Plot for Reported number of People Receiving Art
   geographic_plot_art <- leaflet(data = filtered_hiv) %>%
     addProviderTiles("CartoDB.Positron") %>%
@@ -31,9 +36,15 @@ geographical_chart <- function(df1, df2) {
       stroke = TRUE,
       weight = 1,
       fillOpacity = 0.3,
-      color = "Red",
+      color = ~pal(art_received),
       radius = ~ sqrt(art_received) * 600,
       popup = content
+    ) %>% 
+    addLegend(
+      "bottomright",
+      pal = pal,
+      values = ~art_received,
+      title = "Number of People Receivig ART"
     )
   return(geographic_plot_art)
 }
