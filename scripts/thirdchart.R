@@ -1,9 +1,6 @@
 library("dplyr")
 library("plotly")
 
-# Read the data from the csv file
-art_coverage_df <- read.csv("../data/art_coverage_by_country_clean.csv")
-
 # Isolate into columns that we are interested in
 plot_hiv_per_region <- function(dataset) {
   dataset %>% 
@@ -25,7 +22,7 @@ plot_hiv_per_region <- function(dataset) {
         barmode = "group"
       )
 }
-plot_hiv_per_region(art_coverage_df)
+
 # Description
 # This bar graph displays the median estimate of the number of people who are
 # living with HIV per WHO Region. The African region has by far the most number
