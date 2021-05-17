@@ -42,7 +42,7 @@ source("scripts/firstchart.R")
 geographical_chart(hiv_df, country_coordinates)
 ```
 
-```{r thridchart, echo=FALSE, warning=FALSE}
+```{r thirdchart, echo=FALSE, warning=FALSE}
 source("scripts/thirdchart.R")
 plot_hiv_per_region(hiv_df)
 ```
@@ -50,11 +50,6 @@ You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
 plot(pressure)
-```
-
-```{r thirdchart, echo=FALSE}
-source("scripts/thirdchart.R")
-plot_hiv_per_region(hiv_df)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
