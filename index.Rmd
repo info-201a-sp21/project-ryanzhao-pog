@@ -37,8 +37,6 @@ summary(cars)
 
 ## Charts
 
-
-
 ```{r firstchart, echo=FALSE, warning=FALSE}
 source("scripts/firstchart.R")
 geographical_chart(hiv_df, country_coordinates)
