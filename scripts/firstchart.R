@@ -18,8 +18,8 @@ combined_data <- merge(hiv_df, country_coordinates,
 )
 
 # Turning column in numeric values
-filtered_hiv$art_received <-
-  as.numeric(filtered_hiv$Reported.number.of.people.receiving.ART)
+combined_data$art_received <-
+  as.numeric(combined_data$Reported.number.of.people.receiving.ART)
 
 # Filtering Columns to show only countries with data in reported number of
 # people receiving ART.
