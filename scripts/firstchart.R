@@ -4,49 +4,39 @@ library("plotly")
 library("ggplot2")
 library("leaflet")
 
-# Read the data from the csv file
-hiv_df <- read.csv("../data/art_coverage_by_country_clean.csv",
-  stringsAsFactors = FALSE
-)
-country_coordinates <- read.csv("../data/world_country_coordinate.csv",
-  stringsAsFactors = FALSE
-)
-
-combined_data <- merge(hiv_df, country_coordinates,
-  by = "Country",
-  all.x = TRUE
-)
-
-# Turning column in numeric values
-combined_data$art_received <-
-  as.numeric(combined_data$Reported.number.of.people.receiving.ART)
-
-# Filtering Columns to show only countries with data in reported number of
-# people receiving ART.
-filtered_hiv <- filter(combined_data, art_received != "Nodata")
-
-# Combining columns for information
-content <- paste(
-  sep = "<br/>",
-  filtered_hiv$Country,
-  filtered_hiv$art_received
-)
-
-# Interactive Geographical Plot for Reported number of People Receiving Art
-geographic_plot_art <- leaflet(data = filtered_hiv) %>%
-  addProviderTiles("CartoDB.Positron") %>%
-  addCircles(
-    lng = ~Longitude,
-    lat = ~Latitude,
-    stroke = TRUE,
-    weight = 1,
-    fillOpacity = 0.3,
-    color = "Red",
-    radius = ~ sqrt(art_received) * 600,
-    popup = content
+# Function for creating geographical chart
+geographical_chart <- function(df1, df2) {
+  combined_data <- merge(df1, df2,
+                         by = "Country",
+                         all.x = TRUE
   )
-
-geographic_plot_art
+  # Turning column in numeric values
+  combined_data$art_received <-
+    as.numeric(combined_data$Reported.number.of.people.receiving.ART)
+  # Filtering Columns to show only countries with data in reported number of
+  # people receiving ART.
+  filtered_hiv <- filter(combined_data, art_received != "Nodata")
+  # Combining columns for information
+  content <- paste(
+    sep = "<br/>",
+    filtered_hiv$Country,
+    filtered_hiv$art_received
+  )
+  # Interactive Geographical Plot for Reported number of People Receiving Art
+  geographic_plot_art <- leaflet(data = filtered_hiv) %>%
+    addProviderTiles("CartoDB.Positron") %>%
+    addCircles(
+      lng = ~Longitude,
+      lat = ~Latitude,
+      stroke = TRUE,
+      weight = 1,
+      fillOpacity = 0.3,
+      color = "Red",
+      radius = ~ sqrt(art_received) * 600,
+      popup = content
+    )
+  return(geographic_plot_art)
+}
 
 # Description
 # This is an interactive geographical visualization for the reported number
