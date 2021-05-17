@@ -17,6 +17,7 @@ hiv_df <- read.csv("data/art_coverage_by_country_clean.csv",
   stringsAsFactors = FALSE
 )
 
+# Data for country coordinates
 country_coordinates <- read.csv("data/world_country_coordinate.csv",
   stringsAsFactors = FALSE
 )
@@ -36,11 +37,17 @@ summary(cars)
 
 ## Charts
 
+
+
 ```{r firstchart, echo=FALSE, warning=FALSE}
 source("scripts/firstchart.R")
 geographical_chart(hiv_df, country_coordinates)
 ```
 
+```{r thridchart, echo=FALSE, warning=FALSE}
+source("scripts/thirdchart.R")
+plot_hiv_per_region(hiv_df)
+```
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
