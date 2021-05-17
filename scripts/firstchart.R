@@ -34,9 +34,6 @@ geographical_chart <- function(df1, df2) {
       color = "Red",
       radius = ~ sqrt(art_received) * 600,
       popup = content
-    ) %>% 
-    layout(
-      title = "Interactive Map for Number of Poeple Receiving Art",
     )
   return(geographic_plot_art)
 }
