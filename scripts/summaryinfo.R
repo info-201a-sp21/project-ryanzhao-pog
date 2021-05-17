@@ -1,7 +1,8 @@
 library("dplyr")
 library("tidyverse")
 
-ART_data <- read.csv("data/art_coverage_by_country_clean.csv", stringsAsFactors = FALSE)
+art_data <- read.csv("data/art_coverage_by_country_clean.csv",
+                     stringsAsFactors = FALSE)
 
 get_summary_info <- function(dataset) {
   result <- list()
@@ -14,7 +15,8 @@ get_summary_info <- function(dataset) {
   # number of countries with estimated amount of ART coverage
   result$num_countries_art <- dataset %>%
     select(Estimated.ART.coverage.among.people.living.with.HIV...._median) %>%
-    filter(!is.na(Estimated.ART.coverage.among.people.living.with.HIV...._median)) %>%
+    filter(!is.na(
+      Estimated.ART.coverage.among.people.living.with.HIV...._median)) %>%
     summarize(num_art = n()) %>%
     pull(num_art)
   # Country with the highest median estimate of HIV cases
@@ -134,10 +136,8 @@ get_summary_info <- function(dataset) {
         coverage_prop,
         na.rm = TRUE)) %>%
     pull(coverage_prop)
-  return (result)
+  return(result)
 }
 
 
-summary_info <- get_summary_info(ART_data)
-
-
+summary_info <- get_summary_info(art_data)
