@@ -12,6 +12,7 @@ library("plotly")
 library("ggplot2")
 library("leaflet")
 library("tidyverse")
+library("knitr")
 
 # Loading data
 hiv_df <- read.csv("data/art_coverage_by_country_clean.csv",
@@ -39,7 +40,7 @@ get_summary_info(hiv_df)
 
 ```{r aggregate-table, echo=FALSE, warning=FALSE}
 source("scripts/tablesummary.R")
-summary_table(hiv_df)
+kable(summary_table(hiv_df))
 ```
 
 ## Charts
