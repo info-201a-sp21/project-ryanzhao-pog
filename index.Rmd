@@ -54,7 +54,16 @@ geographical_chart(hiv_df, country_coordinates)
 source("scripts/thirdchart.R")
 plot_hiv_per_region(hiv_df)
 ```
-This chart was intended to show the relationship between the number of HIV cases and the region of the world. The chart's goal was to help us figure out what region has been impacted the most by the HIV crisis. It is clear from looking at the bar chart that the African region has been hit the hardest, with 25.5 million estimated cases. It has the highest total of estimated HIV cases than any other region. In fact, it has more cases than every other region put together. The next highest region is the America's with 2.3 million estimated cases. The Eastern Mediterranean region has the lowest amount of cases, with 380 thousand cases. Most of the world's focus in dealing with the HIV crisis should be centered on helping Africa. 
+This chart was intended to show the relationship between the number of HIV cases
+and the region of the world. The chart's goal was to help us figure out what 
+region has been impacted the most by the HIV crisis. It is clear from looking at 
+the bar chart that the African region has been hit the hardest, with 25.5 
+million estimated cases. It has the highest total of estimated HIV cases than 
+any other region. In fact, it has more cases than every other region put 
+together. The next highest region is the America's with 2.3 million estimated 
+cases. The Eastern Mediterranean region has the lowest amount of cases, with 
+380 thousand cases. Most of the world's focus in dealing with the HIV crisis 
+should be centered on helping Africa. 
 
 ```{r secondchart.R, echo=FALSE}
 source("scripts/secondchart.R")
