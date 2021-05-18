@@ -1,5 +1,9 @@
-art_data <- read.csv("data/art_coverage_by_country_clean.csv",
-                     stringsAsFactors = FALSE)
+# Loading Libraries
+library("dplyr")
+library("plotly")
+library("ggplot2")
+library("leaflet")
+library("tidyverse")
 
 summary_table <- function(dataset) {
   dataset %>%
@@ -18,6 +22,3 @@ summary_table <- function(dataset) {
             na.rm = TRUE)) %>%
     arrange(-coverage_prop)
 }
-
-example_table <- summary_table(art_data)
-example_table

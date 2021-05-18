@@ -1,9 +1,6 @@
 library("dplyr")
 library("tidyverse")
 
-art_data <- read.csv("data/art_coverage_by_country_clean.csv",
-                     stringsAsFactors = FALSE)
-
 get_summary_info <- function(dataset) {
   result <- list()
   # number of countries with estimated cases of HIV
@@ -139,5 +136,3 @@ get_summary_info <- function(dataset) {
   return(result)
 }
 
-
-summary_info <- get_summary_info(art_data)

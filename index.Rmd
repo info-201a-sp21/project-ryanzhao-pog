@@ -11,6 +11,7 @@ library("dplyr")
 library("plotly")
 library("ggplot2")
 library("leaflet")
+library("tidyverse")
 
 # Loading data
 hiv_df <- read.csv("data/art_coverage_by_country_clean.csv",
@@ -29,7 +30,17 @@ we are going to try and view the extent of treatment coverage is for HIV/AIDS in
 
 ## Summary Information
 
+```{r summary, echo=FALSE, warning=FALSE}
+source("scripts/summaryinfo.R")
+get_summary_info(hiv_df)
+```
+
 ## Aggregate Table
+
+```{r aggregate-table, echo=FALSE, warning=FALSE}
+source("scripts/tablesummary.R")
+summary_table(hiv_df)
+```
 
 ## Charts
 
