@@ -3,12 +3,6 @@ library("dplyr")
 library("plotly")
 library("ggplot2")
 
-# Open Data
-HIV_df <- read.csv("../data/art_coverage_by_country_clean.csv", stringsAsFactors = FALSE,
-         sep = "," )
-
-View(HIV_df)
-
 # Plot of estimated people receiving ART vs Estimated people living with HIV 
 treatment_vs_sick <- plot_ly(
   data = HIV_df, 
@@ -39,8 +33,6 @@ Art_treated_vs_sick <- function(dataframe) {
       title = "Estimated People Receiving Art vs. Estimated People Living With HIV"
     ))
 }
-
-Art_treated_vs_sick(dataframe)
 
 # Description 
 # This scatter plot displays the trend of of how the estimated number people living
