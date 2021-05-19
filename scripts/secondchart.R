@@ -32,10 +32,3 @@ Art_treated_vs_sick <- function(dataframe) {
 
 
 
-# Description 
-# This scatter plot displays the trend of of how the estimated number people
-#living with HIV is impacted as the number of people receiving art increases.
-#There is an overall linear, positive trend with variation, implying that as the
-# estimated amount of people receiving ART increases, the estimated amount of
-# people living with HIV also increases. 
-
