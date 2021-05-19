@@ -20,7 +20,7 @@ geographical_chart <- function(df1, df2) {
   content <- paste(
     sep = "<br/>",
     filtered_hiv$Country,
-    filtered_hiv$art_received
+    paste0("Art Received: ", filtered_hiv$art_received)
   )
   # Color
   pal <- colorNumeric(
