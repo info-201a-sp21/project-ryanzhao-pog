@@ -44,7 +44,7 @@ geographical_chart <- function(df1, df2) {
       "bottomright",
       pal = pal,
       values = ~art_received,
-      title = "Number of People Receivig ART"
+      title = "Number of People Receiving ART"
     )
   return(geographic_plot_art)
 }
