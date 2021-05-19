@@ -72,6 +72,13 @@ is clearly something that needs to continue to be a priority globally.
 The following table, map, and charts will further cement this point.
 
 ## Aggregate Table
+The table below is organized by World Health Organization (WHO) regions. It
+displays the total cases of HIV, total ART coverage, and the proportion of ART
+coverage to people living with HIV in each region. The regions are ordered by
+greatest to least proportion of ART coverage to those who have HIV. This table
+is beneficial as it allows us to view which regions have effective ART coverage
+for those living with HIV, and which countries need more help with providing
+that coverage. 
 
 ```{r aggregate-table, echo=FALSE, warning=FALSE}
 source("scripts/tablesummary.R")
@@ -106,8 +113,8 @@ living with HIV is impacted as the number of people receiving art increases.
 There is an overall linear, positive trend with variation. This positive trend
 implies that as the estimated amount of people receiving ART increases,
 the estimated amount of people living with HIV also increases.This increase in
-people living with HIV is due to the trestment being effective and allowing for
-thos eliving with HIV to live longer lives.
+people living with HIV is due to the treatment being effective, and allowing for
+those living with HIV to live longer lives.
 
 ```{r thirdchart, echo=FALSE, warning=FALSE}
 source("scripts/thirdchart.R")
