@@ -7,8 +7,8 @@ library("leaflet")
 # Function for creating geographical chart
 geographical_chart <- function(df1, df2) {
   combined_data <- merge(df1, df2,
-                         by = "Country",
-                         all.x = TRUE
+    by = "Country",
+    all.x = TRUE
   )
   # Turning column in numeric values
   combined_data$art_received <-
@@ -36,10 +36,10 @@ geographical_chart <- function(df1, df2) {
       stroke = TRUE,
       weight = 1,
       fillOpacity = 0.3,
-      color = ~pal(art_received),
+      color = ~ pal(art_received),
       radius = ~ sqrt(art_received) * 600,
       popup = content
-    ) %>% 
+    ) %>%
     addLegend(
       "bottomright",
       pal = pal,

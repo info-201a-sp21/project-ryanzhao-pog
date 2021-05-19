@@ -3,26 +3,29 @@ library("plotly")
 
 # Isolate into columns that we are interested in
 plot_hiv_per_region <- function(dataset) {
-  dataset %>% 
-  # Isolate into columns that we are interested in
-  group_by(WHO.Region) %>% 
-    select(WHO.Region, Estimated.number.of.people.living.with.HIV_median) %>% 
-    summarize(total_median_num_HIV = 
-                sum(Estimated.number.of.people.living.with.HIV_median, 
-                    na.rm = TRUE)) %>% 
+  dataset %>%
+    # Isolate into columns that we are interested in
+    group_by(WHO.Region) %>%
+    select(WHO.Region, Estimated.number.of.people.living.with.HIV_median) %>%
+    summarize(
+      total_median_num_HIV =
+        sum(Estimated.number.of.people.living.with.HIV_median,
+          na.rm = TRUE
+        )
+    ) %>%
     # Plot the altered data frame
     plot_ly(
       x = ~WHO.Region,
-      y = ~total_median_num_HIV, 
-      type = "bar", 
+      y = ~total_median_num_HIV,
+      type = "bar",
       name = "Number w/ HIV"
-    ) %>% 
-      layout(
-        title = "Estimated Number of People Living with HIV vs Region of the World",
-        xaxis = list(title = "Region of the World"),
-        yaxis = list(title = "Median Estimate of People Living with HIV"),
-        barmode = "group"
-      )
+    ) %>%
+    layout(
+      title = "Estimated Number of People Living with HIV vs Region of the World",
+      xaxis = list(title = "Region of the World"),
+      yaxis = list(title = "Median Estimate of People Living with HIV"),
+      barmode = "group"
+    )
 }
 
 # Description

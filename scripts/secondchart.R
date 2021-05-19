@@ -3,20 +3,24 @@ library("dplyr")
 library("plotly")
 library("ggplot2")
 
-# Make function that returns the plot 
+# Make function that returns the plot
 Art_treated_vs_sick <- function(dataframe) {
   dataframe <- hiv_df %>%
-    select(Reported.number.of.people.receiving.ART,
-           Estimated.number.of.people.living.with.HIV_median) %>%
+    select(
+      Reported.number.of.people.receiving.ART,
+      Estimated.number.of.people.living.with.HIV_median
+    ) %>%
     filter(Reported.number.of.people.receiving.ART != "Nodata") %>%
     filter(!is.na(Estimated.number.of.people.living.with.HIV_median)) %>%
-    mutate(living_with_HIV =
-             as.numeric(Estimated.number.of.people.living.with.HIV_median),
-           receiving_ART =
-             as.numeric(Reported.number.of.people.receiving.ART))
+    mutate(
+      living_with_HIV =
+        as.numeric(Estimated.number.of.people.living.with.HIV_median),
+      receiving_ART =
+        as.numeric(Reported.number.of.people.receiving.ART)
+    )
   treated_vs_sick_plot <- plot_ly(
-    data = dataframe, 
-    x = ~living_with_HIV, 
+    data = dataframe,
+    x = ~living_with_HIV,
     y = ~receiving_ART,
     type = "scatter",
     mode = "markers"
@@ -29,6 +33,3 @@ Art_treated_vs_sick <- function(dataframe) {
     )
   return(treated_vs_sick_plot)
 }
-
-
-
