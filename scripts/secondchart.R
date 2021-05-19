@@ -5,23 +5,37 @@ library("ggplot2")
 
 # Make function that returns the plot 
 Art_treated_vs_sick <- function(dataframe) {
-  return(plot_ly(
+  dataframe <- hiv_df %>%
+    select(Reported.number.of.people.receiving.ART,
+           Estimated.number.of.people.living.with.HIV_median) %>%
+    filter(Reported.number.of.people.receiving.ART != "Nodata") %>%
+    filter(!is.na(Estimated.number.of.people.living.with.HIV_median)) %>%
+    mutate(living_with_HIV =
+             as.numeric(Estimated.number.of.people.living.with.HIV_median),
+           receiving_ART =
+             as.numeric(Reported.number.of.people.receiving.ART))
+  treated_vs_sick_plot <- plot_ly(
     data = dataframe, 
-    x = ~Reported.number.of.people.receiving.ART, 
-    y = ~Estimated.number.of.people.living.with.HIV,
+    x = ~living_with_HIV, 
+    y = ~receiving_ART,
     type = "scatter",
     mode = "markers"
   ) %>%
     layout(
-      xaxis = list(autorange="reversed", title = "Estimated People Receiving Art"),
-      yaxis = list(autorange="reversed", title = "Estimated People Living With HIV"),
-      title = "Estimated People Receiving Art vs. Estimated People Living With HIV"
-    ))
+      xaxis = list(title = "Estimated People Receiving Art"),
+      yaxis = list(title = "Estimated People Living With HIV"),
+      title =
+        "Estimated People Receiving Art vs. Estimated People Living With HIV"
+    )
+  return(treated_vs_sick_plot)
 }
 
-# Description 
-# This scatter plot displays the trend of of how the estimated number people living
-# with HIV is impacted as the number of people receiving art increases. There is
-# an overall linear, positive trend with variation. 
 
+
+# Description 
+# This scatter plot displays the trend of of how the estimated number people
+#living with HIV is impacted as the number of people receiving art increases.
+#There is an overall linear, positive trend with variation, implying that as the
+# estimated amount of people receiving ART increases, the estimated amount of
+# people living with HIV also increases. 
 
