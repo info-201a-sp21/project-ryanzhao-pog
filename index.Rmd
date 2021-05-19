@@ -73,6 +73,14 @@ The following table, map, and charts will further cement this point.
 
 ## Aggregate Table
 
+The table below is organized by World Health Organization (WHO) regions. It
+displays the total cases of HIV, total ART coverage, and the proportion of ART
+coverage to people living with HIV in each region. The regions are ordered by
+greatest to least proportion of ART coverage to those who have HIV. This table
+is beneficial as it allows us to view which regions have effective ART coverage
+for those living with HIV, and which countries need more help with providing
+that coverage.
+
 ```{r aggregate-table, echo=FALSE, warning=FALSE}
 source("scripts/tablesummary.R")
 kable(summary_table(hiv_df))
