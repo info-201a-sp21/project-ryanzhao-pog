@@ -78,6 +78,17 @@ source("scripts/tablesummary.R")
 kable(summary_table(hiv_df))
 ```
 
+This is an interactive map that plots the geographic location for each country.
+The size of the marker is determined by the number of people who have
+received ART. When the marker is clicked it provides the country name and the
+exact number of people who have received ART. There is also a color range that
+goes from red to blue to indicate how many people are receiving ART.We included
+this chart to visually see the locations of the countries and compare the number
+of people receiving ART in each country based on the size of the circle.
+We can see that Africa has is the region where most of the data for number of
+people receiving ART are from. Visually, South Africa has the highest number
+of people receiving ART based on the size and color.
+
 ## Charts
 
 ```{r firstchart, echo=FALSE, warning=FALSE}
