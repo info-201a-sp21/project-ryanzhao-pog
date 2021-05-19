@@ -21,7 +21,8 @@ plot_hiv_per_region <- function(dataset) {
       name = "Number w/ HIV"
     ) %>%
     layout(
-      title = "Estimated Number of People Living with HIV vs Region of the World",
+      title = "Estimated Number of People Living with HIV vs Region of the
+      World",
       xaxis = list(title = "Region of the World"),
       yaxis = list(title = "Median Estimate of People Living with HIV"),
       barmode = "group"
