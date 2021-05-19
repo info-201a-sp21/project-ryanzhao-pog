@@ -62,7 +62,7 @@ Despite the `r summary_info$min_region_cov_prop_region` having the lowest ART
 coverage proportion, the region in which HIV cases themselves are most prevalent
 is Africa. Specifically, `r summary_info$max_cases_country` has the most
 estimated people living with HIV of any country on record,
-with `r summary_info$max_cases` cases, and specifc countries within Africa have
+with `r summary_info$max_cases` cases, and specific countries within Africa have
 an individual coverage proportion lower than any world region.
 `r summary_info$min_coverage_prop_country` for example, has the lowest coverage
 proportion of any country in the world with a `r summary_info$min_coverage_prop`.
