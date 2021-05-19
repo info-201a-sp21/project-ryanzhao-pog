@@ -98,7 +98,7 @@ of people receiving ART based on the size and color.
 
 ```{r secondchart.R, echo=FALSE}
 source("scripts/secondchart.R")
-Art_treated_vs_sick(hiv_df)
+art_treated_vs_sick(hiv_df)
 ```
 
 This scatter plot displays the trend of of how the estimated number people

@@ -4,7 +4,7 @@ library("plotly")
 library("ggplot2")
 
 # Make function that returns the plot
-Art_treated_vs_sick <- function(dataframe) {
+art_treated_vs_sick <- function(dataframe) {
   dataframe <- hiv_df %>%
     select(
       Reported.number.of.people.receiving.ART,
