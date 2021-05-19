@@ -28,5 +28,8 @@ summary_table <- function(dataset) {
           na.rm = TRUE
         )
     ) %>%
-    arrange(-coverage_prop)
+    arrange(-coverage_prop) %>% 
+    rename("WHO Region" = WHO.Region, "Total Cases" = total_cases, 
+          "Total ART Coverage" = total_coverage, 
+          "ART Coverage Proportion" = coverage_prop)
 }
