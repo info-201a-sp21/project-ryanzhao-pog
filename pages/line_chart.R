@@ -25,7 +25,7 @@ years_selection <- sliderInput(
   label = h3("Year Range"), 
   min = min(data$Year, na.rm = TRUE), 
   max = max(data$Year, na.rm = TRUE), 
-  value = c(min, max),
+  value = c(min(data$Year, na.rm = TRUE), max(data$Year, na.rm = TRUE)),
   sep = ""
 )
 
@@ -65,7 +65,7 @@ server <- function(input, output) {
                                         "Prevalance.HIV.AIDS"),
                          values = c("Deaths.HIV.AIDS" = "green", 
                                     "Incidence.HIV.AIDS" = "red",
-                                    "Prevalance.HIV.AIDS" = "blue"))
+                                    "Prevalance.HIV.AIDS" = "blue")) +
       labs(x = paste0("Data Between ", input$years[1], "-", input$years[2]),
            y = "Total Number", title = 
              paste0("Deaths, Incidence, and Prevalance in ", input$country))
@@ -76,3 +76,4 @@ server <- function(input, output) {
 
 
 shinyApp(ui, server)
+
