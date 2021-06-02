@@ -33,7 +33,7 @@ intro <- tabPanel(
       <h1>HIV/AIDS and ART Treatment Dataset Introduction</h1>
     </header>
     <main>
-      <img src='hiv.jpg' alt='hand holding up hiv ribbon'>
+      <img id='main' src='hiv.jpg' alt='hand holding up hiv ribbon'>
       <!-- Image taken from https://indianexpress.com/article/lifestyle/life-style/we-need-
         attention-too-the-plight-of-the-hiv-positive-community-in-india-4405035/ -->
       <section id='intro'>
