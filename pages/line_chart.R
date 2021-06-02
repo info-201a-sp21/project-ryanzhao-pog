@@ -1,5 +1,8 @@
+# Loading Libraries
 library("dplyr")
 library("shiny")
+
+# Reading Data
 data <- read.csv("../data/deaths-and-new-cases-of-hiv.csv")
 data <- data %>% 
   group_by(data$Entity)
