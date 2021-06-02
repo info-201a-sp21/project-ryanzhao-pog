@@ -141,7 +141,9 @@ map_chart_page <- tabPanel(
   map_page,
   region_selection,
   h5("Click the marker that appears to view data about your selected region"),
-  leafletOutput("region_map")
+  leafletOutput("region_map"),
+  h4("Map Summary"),
+  textOutput("map_explanation")
 )
 
 ### Line Chart stuff

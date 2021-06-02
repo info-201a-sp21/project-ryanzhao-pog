@@ -52,6 +52,17 @@ server <- function(input, output) {
                       "Coverage Proportion: ", selected_region$coverage_prop, "<br>")
       )
   })
+  output$map_explanation <- renderText({
+    paste("This map allows for the selection of a World Health Organization
+    region and then places a marker in the general area of that region.
+    Clicking that marker will show summary HIV and ART data for that entire
+    region with the data points: Total HIV Cases, number of People Receiving
+    ART, and Coverage Proportion. This is meant to give the viewer quick
+    insights about different areas of the world and specifically which regions
+    need the most help in terms of more ART coverage. Furthermore, it allows
+    for equitable comparisons directly between regions because it gives the
+          proportion of art coverage in a region to the total HIV cases.")
+  })
   output$linechart <- renderPlot({
     title <- paste0(input$country, " between ", input$years)
     
