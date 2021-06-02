@@ -7,10 +7,6 @@ hiv_df <- read.csv("./data/art_coverage_by_country_clean.csv",
                    stringsAsFactors = FALSE
 
 )
-death_rate_df <- read.csv("./data/deaths-and-new-cases-of-hiv.csv",
-                          stringsAsFactors = FALSE)
-death_rate_df <- death_rate_df %>% 
-  group_by(death_rate_df$Entity)
 
 
 bar_chart_df <- hiv_df %>%
@@ -162,7 +158,8 @@ years_selection <- sliderInput(
   max = max(death_rate_df$Year, na.rm = TRUE), 
   value = c(min(death_rate_df$Year, na.rm = TRUE), 
             max(death_rate_df$Year, na.rm = TRUE)),
-  sep = ""
+  sep = "",
+  format = "####"
 )
 
 line_chart_page <- tabPanel(
