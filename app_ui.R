@@ -171,9 +171,9 @@ conclusion <- tabPanel(
 # Bar chart stuff
 bar_chart_page <- tabPanel(
   "Bar Chart",
-  h1(strong("Select a Region")),
   sidebarLayout(
     sidebarPanel(
+      h3("Select a Region"),
       selectInput(inputId = "regionselect",
                   label = "Region",
                   selected = "Americas",
@@ -185,7 +185,7 @@ bar_chart_page <- tabPanel(
       plotlyOutput(outputId = "region_chart")
     )
   ),
-  h2(strong("Chart Summary:")),
+  h2("Chart Summary:"),
   mainPanel(
     textOutput(outputId = "chartexplanation")
   )
