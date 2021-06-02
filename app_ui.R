@@ -173,7 +173,7 @@ bar_chart_page <- tabPanel(
   "Bar Chart",
   sidebarLayout(
     sidebarPanel(
-      h3("Select a Region"),
+      h4("Select a Region"),
       selectInput(inputId = "regionselect",
                   label = "Region",
                   selected = "Americas",
@@ -185,7 +185,7 @@ bar_chart_page <- tabPanel(
       plotlyOutput(outputId = "region_chart")
     )
   ),
-  h2("Chart Summary:"),
+  h3("Chart Summary:"),
   mainPanel(
     textOutput(outputId = "chartexplanation")
   )
@@ -248,7 +248,7 @@ map_chart_page <- tabPanel(
   region_selection,
   h5("Click the marker that appears to view data about your selected region"),
   leafletOutput("region_map"),
-  h4("Map Summary"),
+  h3("Map Summary"),
   textOutput("map_explanation")
 )
 
@@ -277,11 +277,11 @@ years_selection <- sliderInput(
 
 line_chart_page <- tabPanel(
   "Line Chart",
-  h1("See How Selected Countries Have Been Dealing with HIV/AIDS"),
+  h2("See How Selected Countries Have Been Dealing with HIV/AIDS"),
   country_selection,
   years_selection,
   plotOutput("linechart"),
-  h2(strong("Chart Summary:")),
+  h3("Chart Summary:"),
   mainPanel(
     textOutput(outputId = "linechartexplanation")
   )
