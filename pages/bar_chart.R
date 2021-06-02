@@ -30,8 +30,7 @@ server <- function(input, output) {
       Type = "bar"
     ) %>%
       layout(
-        xaxis = list(title = "Country", scaleratio = 0.05,
-                     domain = c(0,1)),
+        xaxis = list(title = "Country", automargin=TRUE),
         yaxis = list(title = "ART Coverage among People with HIV")
       )
     return(chart)

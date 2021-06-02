@@ -171,20 +171,14 @@ conclusion <- tabPanel(
 # Bar chart stuff
 bar_chart_page <- tabPanel(
   "Bar Chart",
-  sidebarLayout(
-    sidebarPanel(
+  h2("Regional Median Estimated ART Coverage Among People Living with HIV"),
       h4("Select a Region"),
       selectInput(inputId = "regionselect",
                   label = "Region",
                   selected = "Americas",
                   choices = unique(bar_chart_df$WHO.Region)
-      )
     ),
-    mainPanel(
-      h3("Regional Median Estimated ART Coverage Among People Living with HIV"),
-      plotlyOutput(outputId = "region_chart")
-    )
-  ),
+      plotlyOutput(outputId = "region_chart"),
   h3("Chart Summary:"),
   textOutput(outputId = "chartexplanation")
 )
