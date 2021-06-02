@@ -4,18 +4,9 @@ library("shiny")
 
 # Reading Data
 data <- read.csv("../data/deaths-and-new-cases-of-hiv.csv")
-data <- data %>% 
-  group_by(data$Entity)
+# data <- data %>% 
+#   group_by(data$Entity)
 
-
-chart <- tabPanel(
-  "Line Chart",
-  fluidPage(
-    h2("See How Selected Countries Have Been Dealing with HIV"),
-    country_selection,
-    years_selection
-  )
-)
 
 country_selection <- selectInput(
   "country",

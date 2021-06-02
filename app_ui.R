@@ -5,7 +5,13 @@ library("plotly")
 
 hiv_df <- read.csv("./data/art_coverage_by_country_clean.csv",
                    stringsAsFactors = FALSE
+
 )
+death_rate_df <- read.csv("./data/deaths-and-new-cases-of-hiv.csv",
+                          stringsAsFactors = FALSE)
+death_rate_df <- death_rate_df %>% 
+  group_by(death_rate_df$Entity)
+
 
 bar_chart_df <- hiv_df %>%
   group_by(WHO.Region) %>%
@@ -138,32 +144,24 @@ map_chart_page <- tabPanel(
 )
 
 ### Line Chart stuff
-data <- read.csv("./data/deaths-and-new-cases-of-hiv.csv")
-data <- data %>% 
-  group_by(data$Entity)
+death_rate_df <- read.csv("./data/deaths-and-new-cases-of-hiv.csv")
+death_rate_df <- death_rate_df %>% 
+  group_by(death_rate_df$Entity)
 
-
-chart <- tabPanel(
-  "Line Chart",
-  fluidPage(
-    h2("See How Selected Countries Have Been Dealing with HIV"),
-    country_selection,
-    years_selection
-  )
-)
 
 country_selection <- selectInput(
   "country",
   label = h3("Choose a Country"),
-  choices = unique(data$Entity)
+  choices = unique(death_rate_df$Entity)
 )
 
 years_selection <- sliderInput(
   "years", 
   label = h3("Year Range"), 
-  min = min(data$Year, na.rm = TRUE), 
-  max = max(data$Year, na.rm = TRUE), 
-  value = c(min(data$Year, na.rm = TRUE), max(data$Year, na.rm = TRUE)),
+  min = min(death_rate_df$Year, na.rm = TRUE), 
+  max = max(death_rate_df$Year, na.rm = TRUE), 
+  value = c(min(death_rate_df$Year, na.rm = TRUE), 
+            max(death_rate_df$Year, na.rm = TRUE)),
   sep = ""
 )
 
