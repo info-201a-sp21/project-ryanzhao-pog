@@ -55,7 +55,7 @@ server <- function(input, output) {
   output$linechart <- renderPlot({
     title <- paste0(input$country, " between ", input$years)
     
-    isolatedData <- data %>% 
+    isolatedData <- death_rate_df %>% 
       group_by(Entity) %>% 
       rename(
         Deaths.HIV.AIDS = 
