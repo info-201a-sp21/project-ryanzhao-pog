@@ -1,0 +1,38 @@
+/*
+  Group F1
+  This is the styles.css page for HIV/AIDS and ART Treatment Data
+  It is used by all pages in the project to give the site a consistent
+  look and feel.
+*/
+
+body {
+  background: #ffe4c4;
+  font-family: 'Roboto', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 2vw;
+  font-size: 50px;
+}
+
+button {
+  font-weight: bold;
+  font-size: 1vw;
+  margin: 1%;
+  width: 20%;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #e8e4e1;
+}
+
+h2 {
+  font-size: 20pt;
+  padding-left: 15px;
+}
