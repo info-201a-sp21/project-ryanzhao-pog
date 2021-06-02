@@ -163,25 +163,20 @@ years_selection <- sliderInput(
   max = max(death_rate_df$Year, na.rm = TRUE), 
   value = c(min(death_rate_df$Year, na.rm = TRUE), 
             max(death_rate_df$Year, na.rm = TRUE)),
-  sep = "",
-  format = "####"
+  sep = ""
 )
 
-chart <- tabPanel(
-  "Line Chart",
-  fluidPage(
-    h2("See How Selected Countries Have Been Dealing with HIV"),
-    country_selection,
-    years_selection
-  )
-)
 
 line_chart_page <- tabPanel(
   "Line Chart",
   h1("See How Selected Countries Have Been Dealing with HIV/AIDS"),
   country_selection,
   years_selection,
-  plotOutput("linechart")
+  plotOutput("linechart"),
+  h2(strong("Chart Summary:")),
+  mainPanel(
+    textOutput(outputId = "linechartexplanation")
+  )
 )
 
 

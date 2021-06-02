@@ -5,7 +5,7 @@ server <- function(input, output) {
       x = ~bar_chart_df$Country[bar_chart_df$WHO.Region == input$regionselect],
       y = ~bar_chart_df$M_ART_coverage_among_living_HIV[bar_chart_df$WHO.Region
                                                         == input$regionselect],
-      Type = "bar"
+      type = "bar"
     ) %>%
       layout(
         xaxis = list(title = "Country"),
@@ -85,5 +85,15 @@ server <- function(input, output) {
              paste0("Deaths, Incidence, and Prevalance in ", input$country))
     
     return(country_plot)
+  })
+  output$linechartexplanation <- renderText({
+    linechartsummary <- paste("This chart allows you to see death rate,
+                              incidence, and prevalance of HIV over the years
+                              for chosen countries. It allows the user to have
+                              a general understanding of how individual 
+                              countries have been handling the HIV crisis over
+                              time and provides valuable information on what 
+                              specific countries are struggling the most with
+                              the disease.")
   })
 }
