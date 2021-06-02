@@ -181,14 +181,12 @@ bar_chart_page <- tabPanel(
       )
     ),
     mainPanel(
-      h2("Regional Median Estimated ART Coverage Among People Living with HIV"),
+      h3("Regional Median Estimated ART Coverage Among People Living with HIV"),
       plotlyOutput(outputId = "region_chart")
     )
   ),
   h3("Chart Summary:"),
-  mainPanel(
-    textOutput(outputId = "chartexplanation")
-  )
+  textOutput(outputId = "chartexplanation")
 )
 
 
@@ -231,9 +229,7 @@ hiv_region <- hiv_country %>%
 
 map_page <- tabPanel(
   "Map",
-  fluidPage(
-    h2("View Country and Region data on the map")
-  )
+  h2("View Regional data on the map")
 )
 
 region_selection <- selectInput(
@@ -282,9 +278,7 @@ line_chart_page <- tabPanel(
   years_selection,
   plotOutput("linechart"),
   h3("Chart Summary:"),
-  mainPanel(
-    textOutput(outputId = "linechartexplanation")
-  )
+  textOutput(outputId = "linechartexplanation")
 )
 
 
