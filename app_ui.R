@@ -63,7 +63,7 @@ intro <- tabPanel(
 
 # Bar chart stuff
 bar_chart_page <- tabPanel(
-  "Page One",
+  "Page one",
   h1(strong("Select a Region")),
   sidebarLayout(
     sidebarPanel(
@@ -77,7 +77,12 @@ bar_chart_page <- tabPanel(
       h2("Regional Median Estimated ART Coverage Among People Living with HIV"),
       plotlyOutput(outputId = "region_chart")
     )
-  ))
+  ),
+  h2(strong("Chart Summary:")),
+  mainPanel(
+    textOutput(outputId = "chartexplanation")
+  )
+)
 
 ### Map stuff
 # Data for country coordinates
@@ -143,15 +148,6 @@ data <- data %>%
   group_by(data$Entity)
 
 
-chart <- tabPanel(
-  "Line Chart",
-  fluidPage(
-    h2("See How Selected Countries Have Been Dealing with HIV"),
-    country_selection,
-    years_selection
-  )
-)
-
 country_selection <- selectInput(
   "country",
   label = h3("Choose a Country"),
@@ -167,6 +163,15 @@ years_selection <- sliderInput(
   sep = ""
 )
 
+chart <- tabPanel(
+  "Line Chart",
+  fluidPage(
+    h2("See How Selected Countries Have Been Dealing with HIV"),
+    country_selection,
+    years_selection
+  )
+)
+
 line_chart_page <- tabPanel(
   "Line Chart",
   h1("See How Selected Countries Have Been Dealing with HIV/AIDS"),
@@ -174,6 +179,8 @@ line_chart_page <- tabPanel(
   years_selection,
   plotOutput("linechart")
 )
+
+
 
 # UI
 ui <- 

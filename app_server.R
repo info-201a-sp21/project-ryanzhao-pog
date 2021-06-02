@@ -13,6 +13,16 @@ server <- function(input, output) {
       )
     return(chart)
   })
+  output$chartexplanation <- renderText({
+    message <- paste("This page allows for users to select a specific
+                     region, then outputs a bar chart which displays the
+                     Median ART coverage among people living with HIV in the
+                     countries within that selected region. This visual allows
+                     for easy comparison of ART coverage to be made between
+                     countries within certain regions, giving viewers
+                     a better understanding of which countries and regions
+                     have good coverage, and which ones need more.")
+  })
   output$region_map <- renderLeaflet({
     
     selected_region <- hiv_region %>%

@@ -8,15 +8,6 @@ data <- data %>%
   group_by(data$Entity)
 
 
-chart <- tabPanel(
-  "Line Chart",
-  fluidPage(
-    h2("See How Selected Countries Have Been Dealing with HIV"),
-    country_selection,
-    years_selection
-  )
-)
-
 country_selection <- selectInput(
   "country",
   label = h3("Choose a Country"),
@@ -76,6 +67,15 @@ server <- function(input, output) {
     return(country_plot)
   })
 }
+
+chart <- tabPanel(
+  "Line Chart",
+  fluidPage(
+    h2("See How Selected Countries Have Been Dealing with HIV"),
+    country_selection,
+    years_selection
+  )
+)
 
 
 shinyApp(ui, server)
