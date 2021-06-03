@@ -94,12 +94,14 @@ intro <- tabPanel(
         <br>
       </section>
     </main>
+    <br>
     <footer>
       <p>
         Created by INFO201 Group F1 &copy;2021
         All other attributions cited in page source.
       </p>
     </footer>
+    <br>
   </body>"
   )
 )
@@ -165,24 +167,27 @@ conclusion <- tabPanel(
     </p>
       </section>
       </main>
+      <br>
       <footer>
       <p>
       Created by INFO201 Group F1 &copy;2021
     All other attributions cited in page source.
     </p>
       </footer>
+      <br>
       </body>"
   )
 )
 
 footer <- HTML(
   "<br>
-  <footer>
+  <footer class='footer'>
     <p>
       Created by INFO201 Group F1 &copy;2021
       All other attributions cited in page source.
     </p>
-  </footer>"
+  </footer>
+  <br>" 
 )
 
 # Bar chart stuff
@@ -259,7 +264,10 @@ map_chart_page <- tabPanel(
   h5("Click the marker that appears to view data about your selected region"),
   leafletOutput("region_map"),
   h3("Map Summary"),
-  textOutput("map_explanation"),
+  tags$div(
+    id = "content-wrap",
+    textOutput("map_explanation")
+  ),
   footer
 )
 
@@ -314,3 +322,4 @@ ui <-
       conclusion
     )
   )
+
