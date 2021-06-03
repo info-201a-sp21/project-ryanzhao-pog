@@ -116,12 +116,18 @@ server <- function(input, output) {
   })
   output$linechartexplanation <- renderText({
     linechartsummary <- paste("This chart allows you to see death rate,
-                              incidence, and prevalance of HIV over the years
-                              for chosen countries. It allows the user to have
-                              a general understanding of how individual
+                              incidence, and prevalance of HIV/AIDS over the 
+                              years for chosen countries. It allows the user to 
+                              have a general understanding of how individual
                               countries have been handling the HIV crisis over
-                              time and provides valuable information on what
-                              specific countries are struggling the most with
-                              the disease.")
+                              time and provides valuable information on which
+                              countries are struggling the most with
+                              the disease. It will provide answers
+                              to whether the HIV/AIDS epidemic is getting
+                              better or worse in whichever country the user
+                              is interested in knowing about. There is also
+                              a \"world\" option for users to see the general
+                              trend for the entire world and not just a single
+                              country.")
   })
 }
