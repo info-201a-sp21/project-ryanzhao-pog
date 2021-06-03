@@ -199,7 +199,6 @@ bar_chart_page <- tabPanel(
   plotlyOutput(outputId = "region_chart"),
   h3("Chart Summary:"),
   textOutput(outputId = "chartexplanation"),
-  HTML("<br><br><br><br><br><br><br>"),
   footer
 )
 
@@ -261,7 +260,6 @@ map_chart_page <- tabPanel(
   leafletOutput("region_map"),
   h3("Map Summary"),
   textOutput("map_explanation"),
-  HTML("<br><br><br><br>"),
   footer
 )
 
