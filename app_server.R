@@ -8,8 +8,10 @@ server <- function(input, output) {
       type = "bar"
     ) %>%
       layout(
-        xaxis = list(title = "Country", automargin = TRUE),
-        yaxis = list(title = "ART Coverage among People with HIV")
+        title = "ART Coverage Among People with HIV in Countries by Region",
+        xaxis = list(title = "Country"),
+        yaxis = list(title = "ART Coverage Among People With HIV"),
+        margin = list(b = 220, t = 100, xaxis = list(tickangle = 45))
       )
     return(chart)
   })
