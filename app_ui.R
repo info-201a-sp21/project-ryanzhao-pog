@@ -303,7 +303,10 @@ ui <-
   fluidPage(
     includeCSS("styles.CSS"),
     navbarPage(
-      "HIV Statistics",
+      tags$div(
+        id = "navbar",
+        "HIV Statistics"
+      ),
       intro,
       bar_chart_page,
       map_chart_page,
@@ -311,4 +314,3 @@ ui <-
       conclusion
     )
   )
-
