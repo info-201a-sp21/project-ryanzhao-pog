@@ -195,7 +195,7 @@ footer <- HTML(
       All other attributions cited in page source.
     </p>
   </footer>
-  <br>" 
+  <br>"
 )
 
 # Bar chart stuff
@@ -330,4 +330,3 @@ ui <-
       conclusion
     )
   )
-
