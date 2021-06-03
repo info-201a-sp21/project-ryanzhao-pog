@@ -7,7 +7,6 @@ hiv_df <- read.csv("./data/art_coverage_by_country_clean.csv",
   stringsAsFactors = FALSE
 )
 
-
 bar_chart_df <- hiv_df %>%
   group_by(WHO.Region) %>%
   select(
@@ -175,6 +174,17 @@ conclusion <- tabPanel(
       </body>"
   )
 )
+
+footer <- HTML(
+  "<br>
+  <footer>
+    <p>
+      Created by INFO201 Group F1 &copy;2021
+      All other attributions cited in page source.
+    </p>
+  </footer>"
+)
+
 # Bar chart stuff
 bar_chart_page <- tabPanel(
   "Bar Chart",
@@ -188,9 +198,10 @@ bar_chart_page <- tabPanel(
   ),
   plotlyOutput(outputId = "region_chart"),
   h3("Chart Summary:"),
-  textOutput(outputId = "chartexplanation")
+  textOutput(outputId = "chartexplanation"),
+  HTML("<br><br><br><br><br><br><br>"),
+  footer
 )
-
 
 ### Map stuff
 # Data for country coordinates
@@ -231,7 +242,6 @@ hiv_region <- hiv_country %>%
     avg_long = mean(Longitude, na.rm = TRUE)
   )
 
-
 map_page <- tabPanel(
   "Map",
   h2("View Regional data on the map")
@@ -250,7 +260,9 @@ map_chart_page <- tabPanel(
   h5("Click the marker that appears to view data about your selected region"),
   leafletOutput("region_map"),
   h3("Map Summary"),
-  textOutput("map_explanation")
+  textOutput("map_explanation"),
+  HTML("<br><br><br><br>"),
+  footer
 )
 
 ### Line Chart stuff
@@ -277,7 +289,6 @@ years_selection <- sliderInput(
   sep = ""
 )
 
-
 line_chart_page <- tabPanel(
   "Line Chart",
   h2("See How Selected Countries Have Been Dealing with HIV/AIDS"),
@@ -285,10 +296,9 @@ line_chart_page <- tabPanel(
   years_selection,
   plotOutput("linechart"),
   h3("Chart Summary:"),
-  textOutput(outputId = "linechartexplanation")
+  textOutput(outputId = "linechartexplanation"),
+  footer
 )
-
-
 
 # UI
 ui <-
@@ -303,3 +313,4 @@ ui <-
       conclusion
     )
   )
+
